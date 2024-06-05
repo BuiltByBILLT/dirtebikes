@@ -1,12 +1,12 @@
-import styles from "./page.module.css" // Import CSS Module
+import { Hero } from "@/components/homepage/Hero"
+import { BikeList } from "@/components/homepage/BikeList"
+import styles from "./page.module.css"
 
 function HomePage() {
 	return (
 		<div className={styles.homePage}>
-			<img src="images/gold.webp" alt="Background" className={styles.backgroundImage} />
-			<div className={styles.logoContainer}>
-				<img src="images/logo.webp" alt="Logo" className={styles.logo} />
-			</div>
+			<Hero />
+			<BikeList />
 		</div>
 	)
 }
