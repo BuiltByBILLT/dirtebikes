@@ -1,0 +1,28 @@
+.section {
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.heading {
+	color: white;
+	text-align: center;
+}
+
+.subheading {
+	color: white;
+	text-align: center;
+}
+
+.buttonRow {
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	margin: 10px;
+}
