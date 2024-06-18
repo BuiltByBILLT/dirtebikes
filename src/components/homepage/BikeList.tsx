@@ -1,4 +1,5 @@
-import React from "react"
+"use client"
+import React, { useState } from "react"
 import styles from "./BikeList.module.css"
 import { bikes } from "./bikeData.js" // Import the bike data
 
@@ -9,8 +10,17 @@ type Bike = {
 }
 
 const BikeSection: React.FC<{ bike: Bike }> = ({ bike }) => {
+	const [isHovered, setIsHovered] = useState(false)
 	return (
-		<div className={styles.section} style={{ backgroundImage: `url(${bike.bgImage})` }}>
+		<div
+			className={styles.section}
+			style={{
+				backgroundImage: `url(${bike.bgImage})`,
+				backgroundSize: isHovered ? "102%" : "100%", // Dynamically adjust backgroundSize
+				transition: "background-size 0.3s ease", // Add transition for smoothness
+			}}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}>
 			<h1 className={styles.heading}>{bike.model}</h1>
 			<h3 className={styles.subheading}>{bike.tagline}</h3>
 			<div className={styles.buttonRow}>
